@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hãy đoán xem</title>
+</head>
+<body>
+
+    <h1>Trò chơi đoán số từ 1 đến 10</h1>
+
+    <script>
+        function doanSo() {
+            // Lấy số ngẫu nhiên từ 1 đến 10
+            const randomNumber = Math.floor(Math.random() * 10) + 1; 
+            let guess;
+            
+            // Lặp cho đến khi đoán đúng
+            do {
+                guess = prompt("Hãy đoán số (từ 1 đến 10):");
+
+                // Chuyển giá trị nhập vào thành số nguyên
+                guess = parseInt(guess);
+
+                if (guess !== randomNumber) {
+                    alert("Sai rồi, hãy đoán lại!");
+                }
+
+            } while (guess !== randomNumber);
+
+            // Khi đoán đúng
+            alert("Chúc mừng, bạn đã đoán đúng số " + randomNumber + "!");
+        }
+
+        // Gọi hàm đoán số khi tải trang
+        doanSo();
+    </script>
+
+</body>
+</html>
